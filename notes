@@ -1,0 +1,16 @@
+we use basetiles to create a graphic
+we then use isolated rotations and transofmrations and the image() functino to transofmr the basetile into the position and rotaiton that we want
+
+how do we isolate the images to another object that we can control
+
+we need to be able to add other stuff to the canvas, and be able to control where that stuff is relative to the grid
+
+the tiles are controlled by the canvas width and height
+
+just making the canvas bigger (wider) and ading elements to the side -- that won't wprl currently
+
+we just need to separate the size of the grid from the size of the canvas
+
+make it not use canvas variables, use other variables for height and width
+
+and then we can make the canvas bigger, have extra space and elements to the side
