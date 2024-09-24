@@ -14,6 +14,7 @@ function setup() {
   //set canvas to any size
   //createCanvas(600, 400);
   createCanvas(1000, 1000);
+  setupBaseTiles();
 
   background(color2);
   tileCanvasWidth = 600;
