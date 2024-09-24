@@ -89,8 +89,6 @@ function arrangeWithConstraints() {
   }
 
   const down = new Set([4, 5, 6, 7, 9, 11, 13, 15]);
-  const up = new Set([1, 3, 5, 7, 12, 13, 14, 15]);
-  const left = new Set([8, 9, 10, 11, 12, 13, 14, 15]);
   const right = new Set([2, 3, 6, 7, 10, 11, 14, 15]);
 
   for (var row = 0; row < tileRows; row++) {
@@ -126,13 +124,31 @@ function arrangeWithConstraints() {
         }
         var rand = floor(Math.random() * possibleTiles.length);
         tileThis = possibleTiles[rand];
-        //console.log(row, col, tileThis);
         arr[row][col] = tileThis;
       }
     }
   }
   return arr;
 }
+
+const tileFunctions = [
+  tile0,
+  tile1,
+  tile2,
+  tile3,
+  tile4,
+  tile5,
+  tile6,
+  tile7,
+  tile8,
+  tile9,
+  tile10,
+  tile11,
+  tile12,
+  tile13,
+  tile14,
+  tile15,
+];
 
 function drawTiles() {
   console.log("Redrawing tiles now with size {} {}", tileRows, tileCols);
@@ -145,39 +161,7 @@ function drawTiles() {
       var sx = tileW;
       var sy = tileH;
 
-      if (tile == 0) {
-        tile0(x, y, sx, sy);
-      } else if (tile == 1) {
-        tile1(x, y, sx, sy);
-      } else if (tile == 2) {
-        tile2(x, y, sx, sy);
-      } else if (tile == 3) {
-        tile3(x, y, sx, sy);
-      } else if (tile == 4) {
-        tile4(x, y, sx, sy);
-      } else if (tile == 5) {
-        tile5(x, y, sx, sy);
-      } else if (tile == 6) {
-        tile6(x, y, sx, sy);
-      } else if (tile == 7) {
-        tile7(x, y, sx, sy);
-      } else if (tile == 8) {
-        tile8(x, y, sx, sy);
-      } else if (tile == 9) {
-        tile9(x, y, sx, sy);
-      } else if (tile == 10) {
-        tile10(x, y, sx, sy);
-      } else if (tile == 11) {
-        tile11(x, y, sx, sy);
-      } else if (tile == 12) {
-        tile12(x, y, sx, sy);
-      } else if (tile == 13) {
-        tile13(x, y, sx, sy);
-      } else if (tile == 14) {
-        tile14(x, y, sx, sy);
-      } else if (tile == 15) {
-        tile15(x, y, sx, sy);
-      }
+      tileFunctions[tile](x, y, sx, sy);
     }
   }
   console.log("Finished drawing");
