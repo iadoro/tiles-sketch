@@ -66,39 +66,16 @@ function setup() {
     clear();
     tileW = tileCanvasWidth / tileCols;
     tileH = tileCanvasHeight / tileRows;
-    tiles = arrangeWithConstraints();
 
     color1 = picker1.color();
     color2 = picker2.color();
-
+    setupBaseTiles();
     drawTiles();
   });
 
   tiles = arrangeWithConstraints();
   drawTiles();
 }
-
-function mousePressed() {}
-
-// function draw() {
-//   let e = mySelect.selected();
-
-//   console.log(e == "25 x 25");
-
-//   if (e == "5 x 5") {
-//     tilesCols = 5;
-//     tilesRows = 5;
-//   } else if (e == "15 x 15") {
-//     tilesCols = 15;
-//     tilesRows = 15;
-//   } else if (e == "25 x 25") {
-//     tilesCols = 25;
-//     tilesRows = 25;
-//   } else if (e == "35 x 35") {
-//     tilesCol = 35;
-//     tilesRow = 35;
-//   }
-// }
 
 function arrangeWithConstraints() {
   console.log("Making new grid of size:", tileRows, tileCols);
@@ -167,8 +144,6 @@ function drawTiles() {
       var y = tileYStart + row * tileH + tileH / 2;
       var sx = tileW;
       var sy = tileH;
-
-      // console.log(x, y, tile);
 
       if (tile == 0) {
         tile0(x, y, sx, sy);
