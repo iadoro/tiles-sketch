@@ -50,9 +50,6 @@ function setup() {
 
   button.mousePressed(() => {
     let e = mySelect.selected();
-
-    console.log(e == "25 x 25");
-
     if (e == "15 x 10") {
       tileCols = 15;
       tileRows = 10;
@@ -66,6 +63,7 @@ function setup() {
     clear();
     tileW = tileCanvasWidth / tileCols;
     tileH = tileCanvasHeight / tileRows;
+    tiles = arrangeWithConstraints();
 
     color1 = picker1.color();
     color2 = picker2.color();
